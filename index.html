@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acción de Protección</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin-top: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+            margin-bottom: 100px;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .contenedor {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            padding: 20px;
+            border-bottom: double;
+        }
+
+        .columna {
+            text-align: center;
+        }
+
+        /* Estilo para el primer conjunto de botones */
+        button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 10px;
+            width: 180px;
+            background-color: #e2e4e6;
+            border-color: aliceblue;
+        }
+
+        button.active {
+            color: #fff; /* Texto blanco */
+            background-color: #0056b3;
+        }
+
+        hr {
+            width: 80%;
+            margin: 10px auto;
+            border: 1px solid transparent;
+        }
+
+        .resultado {
+            margin-top: 20px;
+            margin-left: 20px;
+            margin-right: 20px;
+            font-size: 24px;
+        }
+
+        .encabezado {
+            margin-top: 20px;
+            margin-left: 20px;
+            margin-right: 20px;
+            font-size: 20px;
+            border-bottom: double;
+        }
+
+        .temporizador {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            text-align: center;
+        }
+
+        .menu {
+            width: auto;
+            background-color: transparent;
+            border-color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <div class="encabezado">
+        <button class="menu" href="#" onclick="mostrarTexto(this, 'Buenos días, Sra. Jueza, buenos días con todos los presentes, en los 20 minutos que dispongo para dar a conocer mi Acción de Protección se expondrá los antecedentes que originaron la presentación de este recurso legal, los derechos vulnerados, las vulneraciones a estos derechos, el hecho relevante de este caso y la pretensión que se requiere con esta acción; al final se expondrán mis fundamentos de los que se requiere la contestación objetiva por parte de la Entidad de Control Accionada.<br><br>También, conforme lo que se estipula en el Art. 4 numeral 7 de la Ley Orgánica de Garantías Jurisdiccionales y Control Constitucional donde se dice que: “<em>Formalidad condicionada.- La jueza o juez tiene el deber de adecuar las formalidades previstas en el sistema jurídico al logro de los fines de los procesos constitucionales. No se podrá sacrificar la justicia constitucional por la mera omisión de formalidades.</em>”, pido, Sra. Jueza, se ignoren las formalidades de litigación oral utilizadas comúnmente en los juzgados y se enfoque la atención en la vulneración de derechos que se pretende demostrar.');iniciarTemporizador()">Inicio</button>
+        <button class="menu" href="#" onclick="mostrarTexto(this, '<p>En la presente acción de protección se utilizan las siguientes referencias, abreviaciones y términos:<br><br><strong>Resolución de Recurso Extraordinario de Revisión</strong> No. SB-INJ-2021-1863<br><strong>Resolución</strong> No. SB-DNAE-2020-1160<br><strong>Contrato de mutuo o préstamo</strong> No.: 8000050409<br><strong>CRE</strong> Constitución de la República del Ecuador.<br><strong>LOGJCC</strong> Ley Orgánica de Garantías Jurisdiccionales y Control Constitucional.<br><strong>Período de Gracia</strong> es el periodo durante el cual el deudor no deberá pagar valores de capital y los intereses que se devenguen se deberán pagar posteriormente. Definición tomada de las cláusulas del contrato en referencia.</p>')">Definiciones</button>
+        <button class="menu" href="#" onclick="mostrarTexto(this, 'Conforme el Art. 14 de la LOGJCC, los <b>fundamentos</b> de mi acción de protección que están contenidos en las vulneraciones aquí expuestas, y de los que se requiere respuestas objetivas por parte de la Autoridad accionada, son:\
+            <br><br>\
+            <b>1.</b> Vulneración al derecho al debido proceso.- ¿Por qué se <b>ignora</b> el hecho, presentado y probado por mi parte, de que existe <b>duda</b> en la aplicación de la condición del periodo de gracia del contrato y por ende mi requerimiento de <b>análisis</b> de la aplicación de las normas correspondientes a pesar de que en la CRE se garantiza el derecho a ser escuchado?\
+            <br><br>\
+            <b>2.</b> Vulneración al derecho a la seguridad jurídica.- ¿Por qué la Superintendencia de Bancos, actuando como abogado de la Institución Financiera, por su parte <b>presenta prueba y argumentos</b>, a favor de Banco Pichincha C.A. sin que este lo haya solicitado, sobre los días del periodo de gracia y el supuesto hecho de que el periodo de gracia está establecido en la Tabla de Amortización ignorando lo que se establece en el Art. 195 del Código Orgánico Administrativo donde se dice que la carga de la prueba le corresponde a la persona interesada y no a la Entidad de Control además de irrespetar lo que se estipula en el Art. 213 de la CRE donde se establece que las actividades de la Superintendencia de Bancos deben sujetarse al ordenamiento jurídico atendiendo el interés general y <b>no el particular</b>?\
+            <br><br>\
+            <b>3.</b> Vulneración al derecho a la seguridad jurídica y al debido proceso.- ¿Por qué la Superintendencia de Bancos tiene la costumbre de <b>ignorar</b> las normas establecidas como se evidencia en mis requerimientos de analizar la aplicación de la norma dada en el Art. 222 del COA al comprobarse el hecho de que se incumplió con lo establecido en el Art.203 del COA, obteniendo como respuesta la evasión de sus responsabilidades?')">Fundamentos</button>
+        <button class="menu" href="#" onclick="mostrarTexto(this, '* ¿Cuál es el <b>daño</b> que me hace la vulneración de derechos? Al violentar mis derechos establecidos en la Constitución, permitiendo el incumplimiento de las normas establecidas en el ordenamiento jurídico, el daño que me provoca es el hecho de que no se exija a la Entidad Financiera el cumplimiento de lo establecido en el contrato de mutuo o préstamo.\
+            <br><br>\
+            * Supuesta <b>improcedencia</b> por no utilizar la vía del contencioso administrativo.- Pongo énfasis en que no existe otro mecanismo adecuado y eficaz para proteger el derecho violado ya que al tratarse de vulneración de derechos constitucionales, la acción de protección es la vía adecuada y eficaz para cesar dicha vulneración conforme el artículo 88 de la Constitución, tal como lo ilustra la Corte Constitucional en el fallo dado con Sentencia No. 1082-17-EP/22, párr. 22 donde se dice que: “De acuerdo con la Constitución y la jurisprudencia constitucional, la acción de protección tiene por objeto el amparo directo y eficaz de derechos constitucionales. Esta es una acción directa e independiente a otras vías jurisdiccionales. No se podrá exigir el agotamiento de otras vías o recursos para poder hacer efectiva la vulneración de derechos constitucionales”.\
+            <br><br>\
+            * Si la Autoridad accionada <b>no responde a los fundamentos</b> de mi acción de protección, alegar el incumplimiento de lo establecido en el Art. 14 de la LOGJCC donde se dice que el accionado deberá contestar exclusivamente los fundamentos de la acción.\
+            <br><br>\
+            * Si la Autoridad accionada hace <b>preguntas fuera del contexto</b> de los fundamentos de mi acción de protección, alegar que está desviando la atención del objetivo que debe resolver esta corte que es la vulneración del derecho constitucional.\
+            <br><br>\
+            * Si la Autoridad accionada alega que no estoy actuando bajo el principio de <b>buena fe</b>, objetar diciendo que no se específica el hecho por el que no estoy actuando bajo este principio y que mi intención al firmar el contrato de mutuo o préstamo con la Entidad Financiera es la de cumplir y hacer cumplir con todas las condiciones del contrato.')">Alegaciones</button>
+        <button class="menu" href="#" onclick="mostrarTexto(this, 'Conforme lo que se establece en el Art. 4, numeral 11, literal c de la LOGJCC, sobre el saneamiento, solicito Señora Jueza se agregue lo siguiente en mi escrito de acción de protección:<br><br>1. En el numeral 3. Antecedentes, agregar literal k) con el contenido de Resolución 1 de la presente exposición.<br>2. En el numeral 4. Derechos Constitucionales Vulnerados, al final agregar el contenido de la Vulneración 3 de la presente exposición.<br><br>Estoy convencido de no haber cometido errores de fondo y pido disculpas por los errores de forma y omisión de formalidades que haya cometido.<br><br><strong>¡Muchas gracias!</strong>')">Fin</button>
+    </div>
+
+    <div class="contenedor">
+        <div class="columna">
+            <h1 onclick="mostrarTexto(this, 'Los antecedentes que se sucitaron para presentar mi acción de protección son los siguientes:')">Antecedentes</h1>
+            <button onclick="mostrarTexto(this, 'Con fecha 28 de agosto del año 2013 se suscribe contrato de mutuo o préstamo con Banco Pichincha C.A.. Actuando bajo el principio de buena fe, declaro que mi intención, al firmar el contrato con Banco Pichincha C.A., es la de pedir prestado una determinada cantidad de dinero para pagar el capital con sus respectivos intereses cumpliendo con todas las condiciones establecidas en el mismo.')">Firma de Contrato</button>
+            <hr>
+            <button onclick="mostrarTexto(this, 'Con fecha 12 de febrero del año 2020 se presenta una <b>duda</b> en la aplicación de la condición correspondiente al <b>periodo de gracia</b> del contrato en referencia al no estar definido los números de días de este período en ninguna parte de este contrato; generada esta duda, luego de hacer las respectivas averiguaciones a la Institución Financiera, se presenta mi reclamo ante la Entidad de Control y, dentro del proceso administrativo, como última impugnación se presenta mi recurso extraordinario de revisión de fecha 01 de agosto de 2021 (Anexo II).')">Reclamo</button>
+            <hr>
+            <button onclick="mostrarTexto(this, 'Dentro del proceso administrativo, que se siguió para resolver mi reclamo, la única vez que la Institución Financiera presenta <b>descargos</b> está contenido en la Resolución No. SB-DNAE-2020-1160, en su página No. 3, párrafo 6, donde se dice: “<em>QUE el señor Freddy Lituma Sarmiento, Firma Autorizada del Banco Pichincha C.A., mediante oficio No. BP-ACEC-2020-0973 de 01 de septiembre de 2020, en atención al requerimiento realizado por el organismo de control, presentó los descargos del reclamo planteado por el señor Fernando Javier Lozada Aguas, y en lo principal indica lo siguiente: Una vez realizadas las respectivas verificaciones en nuestros sistemas debemos señalar que el interés de gracia establecido en la operación de crédito No. 8000050409 corresponde al periodo de gracia de las tres primeras cuotas otorgado al señor LOZADA AGUAS FERNANDO JAVIER el cual no contempla la generación de interés normales, motivo por el cual, los mismos son repartidos para las cuotas pendientes de pago, como ese (sic) establece en la Primera Cláusula del contrato mutuo que respalda la operación de crédito No. 8000050409 el cual fue aceptado y firmado por el señor LOZADA AGUAS FERNANDO JAVIER. (…) </em>”. Como se evidencia, la Institución Financiera <b>nunca</b> se pronuncia acerca de los números de días del periodo de gracia y peor aún dice que el periodo de gracia está establecido en la <b>Tabla de Amortización</b>, en cambio se pronuncia acerca del interés de gracia, asunto que nunca fue reclamado ante la Entidad de Control.')">Resolución 1</button>
+            <hr>
+            <button onclick="mostrarTexto(this, 'En la Resolución de Recurso Extraordinario de Revisión, en su página No. 4, párrafo 4 se dice: “<em>QUE de la revisión efectuada al Recurso Extraordinario de Revisión interpuesto, se establece que el recurrente fundamenta su recurso, argumentando en lo principal, lo siguiente: (…) Mi pretensión, con el presente acto de impugnación, es la siguiente: Con los fundamentos de hecho y de derecho presentados en los numerales anteriores, considerando el principal hecho de que la condición del periodo de gracia del Contrato de Mutuo o Préstamo No. 8000050409 no está definido de forma clara y precisa, pido se revea la Resolución No. SB-DNAE-2020-1160, de fecha dieciséis de noviembre de dos mil veinte y conforme lo dispuesto en el Art.76 numeral 1 y Art. 82 de la Constitución de la República del Ecuador se aplique la norma dada en el literal f) del Art.17 Sección III, Capítulo III, Título XIII de la Codificación de las Normas de la Superintendencia de Bancos y se tome en consideración el hecho de que existe duda en la aplicación de la condición correspondiente al periodo de gracia del contrato de Mutuo o Préstamo en mención y por consiguiente se aplique la norma establecida en el Art.10, Sección II, Capítulo III, Título XIII de la Codificación de las Normas de la Superintendencia de Bancos, donde se prevé que: En caso de duda en la aplicación de condiciones y estipulaciones de los contratos y otros instrumentos de formalización de la relación contractual entre el consumidor financiero y/o beneficiario y las entidades controladas, se las deberá interpretar y entender en el sentido más favorable a los consumidores financieros y/o beneficiarios.</em>”. Como se evidencia en mi pretensión, claramente se expone el hecho de que existe <b>duda</b> en la aplicación de la condición del periodo de gracia del contrato y se solicita el análisis y aplicación de las <b>normas</b> dadas en el marco jurídico de funcionamiento de la Entidad de Control.')">Resolución 2</button>
+        </div>
+
+        <div class="columna">
+            <h1 onclick="mostrarTexto(this, 'Esta acción de protección tiene por objeto el amparo directo e inmediato de los derechos reconocidos en la Constitución y en los tratados internacionales de derechos humanos que a continuación detallo y que han sido vulnerados por la Superintendencia de Bancos con la expedición de la Resolución de Recurso Extraordinario de Revisión en referencia:')">Derechos</h1>
+            <button onclick="mostrarTexto(this, '<b>EL DERECHO A LA SEGURIDAD JURÍDICA.-</b> El artículo 82 de la CRE consagra el derecho a la seguridad jurídica en los siguientes términos:<br><br>“<em>Art. 82 CRE.- El derecho a la seguridad jurídica se fundamenta en el respeto a la Constitución y en la existencia de normas jurídicas previas, claras, públicas y aplicadas por las autoridades competentes</em>”.<br><br>La seguridad jurídica, como señala la norma constitucional, se basa en la obediencia a la norma suprema y al resto de normas que conforman el ordenamiento jurídico, por parte de todas las autoridades que ejercen cargos públicos, <b>garantizando el respeto de los derechos de los ciudadanos.</b>')">Seguridad Jurídica</button>
+            <hr>
+            <button onclick="mostrarTexto(this, '<b>EL DERECHO AL DEBIDO PROCESO.-</b> La Corte Constitucional ha señalado que el debido proceso es un principio jurídico procesal o sustantivo según el cual, toda persona tiene derecho a ciertas garantías mínimas, tendientes a asegurar un resultado justo y equitativo dentro del proceso.<br><br>El derecho al debido proceso se lo concibe como la garantía destinada a limitar las actuaciones que denoten abusos de poder, es decir, impedir que cualquier decisión de la autoridad contenga representaciones de ilegitimidad que amenacen, afecten o lesionen algún derecho constitucional, particularmente, como consecuencia de la vulneración de las garantías que lo configuran.<br><br>El artículo 76 de la Constitución de la República garantiza el derecho al debido proceso en los siguientes términos:\
+            <br><br>“<em>Art. 76.- En todo proceso en el que se determinen derechos y obligaciones de cualquier orden, se asegurará el derecho al debido proceso que incluirá las siguientes garantías básicas: 1.Corresponde a toda autoridad administrativa o judicial, garantizar el <b>cumplimiento</b> de las normas y los derechos de las partes. 7.El derecho de las personas a la defensa incluirá las siguientes garantías: c) Ser <b>escuchado</b> en el momento oportuno y en igualdad de condiciones. l) Las resoluciones de los poderes públicos deberán ser motivadas. No habrá motivación si en la resolución no se enuncian las normas o principios jurídicos en que se funda y no se explica la pertinencia de su aplicación a los antecedentes de hecho. Los actos administrativos, resoluciones o fallos que no se encuentren debidamente motivados se consideraran <b>nulos</b>. Las servidoras o servidores responsables serán sancionados.</em>”')">Debido Proceso</button>
+        </div>
+
+        <div class="columna">
+            <h1 onclick="mostrarTexto(this, 'Es importante señalar que en virtud del derecho a la seguridad jurídica y al debido proceso, consagrados en la Constitución del Ecuador, es imperativo que las normas <b>no sean ignoradas</b>; por iniciativa o a petición, los involucrados tienen el legítimo derecho a un análisis detenido sobre la aplicación o no de una determinada norma, asegurando así la protección de sus derechos fundamentales. En términos legales, la omisión sin justificación en cuanto al análisis de la aplicación de una norma solicitada dentro de un proceso administrativo o jurisdiccional puede interpretarse como su ignorancia implícita.<br><br>A continuación se detalla las vulneraciones a los derechos ya anunciados:')">Vulneraciones</h1>
+            <button onclick="mostrarTexto(this, 'La vulneración a los derechos a la seguridad jurídica contemplado en el Art. 82 y al debido proceso establecido en el Art. 76 num. 1 y 7 lit. c de la CRE donde se garantiza el <b>respeto a las normas</b> y el derecho a ser <b>escuchado</b> en el momento oportuno, lo cual significa no sólo ser oído o leído sino también haber tomado en cuenta todo lo aportado al momento de resolver, se evidencia al comprobarse el hecho de que la Superintendencia de Bancos, en las resoluciones dadas a mi reclamo, <b>ignora</b> por completo el análisis de la aplicación del derecho y la norma dados en los artículos 10 y 17 literal f) del Libro I, Título XIII, Capítulo III de la Codificación de las Normas de la Superintendencia de Bancos <b>solicitados</b> en su debido momento, es así que ni siquiera son citados dentro de los referidos actos administrativos, omisión que no se encuentra justificada en ninguna parte del contenido de las referidas resoluciones.')">Vulneración 1</button>
+            <hr>
+            <button onclick="mostrarTexto(this, 'Dentro del proceso administrativo seguido para resolver mi reclamo, en la etapa de apertura de término de prueba se presentaron las pruebas necesarias para demostrar el hecho de que existe <b>duda</b> en la aplicación de la condición del periodo de gracia del contrato de préstamo en cuestión y por ende se solicitó la aplicación de la norma dada en el Art. 10 del Libro I, Título XIII, Capítulo III de la Codificación de las Normas de la Superintendencia de Bancos, pruebas que fueron ignoradas en las resoluciones y en cambio, por iniciativa de la Superintendencia de Bancos, se toma como principal prueba el supuesto hecho de que la condición del periodo de gracia está establecido en la Tabla de Amortización, prueba que nunca fue presentada por parte de la Institución Financiera; de esta manera queda demostrado la vulneración al derecho establecido en el Art. 76 num. 7 lit. l de la CRE donde se garantiza que toda resolución debe ser motivada enunciando las normas en que se funda y explicando la pertinencia de su aplicación a los <b>antecedentes de hecho</b> o pruebas presentadas por lo que deviene procedente la <b>anulación</b> de esta resolución. En este mismo contexto la Superintendencia de Bancos <b>incumplió</b> con lo que se dice en el Art. 195 del Código Orgánico Administrativo donde se establece que: “<em>En todo procedimiento administrativo en que la situación jurídica de la persona interesada pueda ser agravada con la resolución de la administración pública y en particular, cuando se trata del ejercicio de potestades sancionadoras o de determinación de responsabilidades de la persona interesada, la carga de la prueba le corresponde a la administración pública. <b>En todos los demás casos la carga de la prueba le corresponde a la persona interesada.</b></em>”, con esto se demuestra además la vulneración a los derechos contemplados en los artículos 82 y 76 num. 1 de la CRE.')">Vulneración 2</button>
+            <hr>
+            <button onclick="mostrarTexto(this, 'La vulneración al derecho a la seguridad jurídica contemplado en el Art. 82 de la CRE se evidencia al constatar el hecho de que la Superintendencia de Bancos <b>irrespeta</b> lo que se dice en la Constitución al no cumplir con sus funciones establecidas en el Art. 213 de la CRE donde se establece que las actividades de la Superintendencia de Bancos deben sujetarse al <b>ordenamiento jurídico</b> atendiendo el <b>interés general</b> y no el particular; irrespeto a la Constitución que se da, por parte de la Entidad de Control, al momento de presentar prueba y argumentos a favor de la Institución Financiera sin que esta lo haya solicitado como se aprecia en los antecedentes presentados.')">Vulneración 3</button>
+            <hr>
+            <button onclick="mostrarTexto(this, 'Dentro del proceso administrativo seguido para resolver mi reclamo, la Superintendencia de Bancos incumplió con el plazo establecido en el Art. 203 del Código Orgánico Administrativo (COA) por lo que se solicitó, en reiteradas ocasiones, la aplicación de la norma dada en el Art. 222 del COA, obteniendo como respuesta la insistente evasión del análisis de las normas antes mencionadas (Anexo V). Actos que confirman la evidente vulneración al derecho a la Seguridad Jurídica y al Debido Proceso.')">Vulneración 4</button>
+        </div>
+
+        <div class="columna">
+            <h1>Hecho Relevante</h1>
+            <button onclick="mostrarTexto(this, 'Conforme lo que se estipula en el Art. 4 numeral 14 de la LOGJCC donde se dice que: “<em>Subsidiaridad.- Se tomarán en cuenta los demás principios procesales establecidos en la legislación ordinaria, en la medida en que sean compatibles con la naturaleza del control constitucional.</em>”, y, siendo que existe una discrepancia de opinión, entre la Superintendencia de Bancos y mi Persona, acerca de la <b>precisión</b> en que está establecido el periodo de gracia del contrato de mutuo o préstamo, suscrito con Banco Pichincha C.A, solicito, señora Jueza, que, tomando en consideración las distintas opiniones expuestas en los antecedentes aquí presentados, en especial el antecedente con literal i), se emita una resolución que forme parte de la sentencia y que dictamine si la condición del periodo de gracia del contrato en mención está establecido de forma precisa. Además, conforme lo que se dispone en el Art. 14 de la LOGJCC, de ser necesario, se considere la invitación a un perito o experto que ayude a dilucidar este hecho relevante.')">Petición</button>
+            <hr>
+            <button onclick="mostrarTexto(this, 'En la Resolución de Recurso Extraordinario de Revisión en referencia, en su principal considerando, se dice que: “<em>QUE como queda anotado el Contrato de Mutuo o Préstamo, la Tabla de Amortización y la Liquidación y tabla de honorarios, que respaldan la operación de crédito No. 8000050409, fueron aceptados y firmados por el señor Fernando Javier Lozada Aguas; debiendo resaltar que en la “TABLA INFORMATIVA CONTRATO No. 8000050409” o Tabla de Amortización que forma parte integrante del contrato, se estipuló entre el deudor señor Fernando Lozada Aguas y el acreedor Banco Pichincha C.A. de manera clara y precisa el período de gracia de tres meses, para las tres primeras cuotas (octubre, noviembre y diciembre de 2013), lo cual ratifica el hecho de que el cliente debía pagar el valor de la primera amortización (cuota) en el cuarto mes, enero de 2014, conforme así se desprende de la “Tabla informativa de crédito diferido” (fs. 51 .55); por lo tanto, lo alegado por el recurrente respecto a que el periodo de gracia es indefinido carece de sustento técnico y jurídico y deviene improcedente;</em>”. Siendo mis <b>alegaciones</b> a este considerando que en primer lugar, en ninguna parte del contrato se dice que la “Tabla Informativa” corresponde a la “Tabla de Amortización” por lo que esta consideración esta basada en un <b>supuesto</b>, en segundo lugar, en este considerando se menciona que en la “Tabla Informativa” se estipula de forma clara y <b>precisa</b> el periodo de gracia de tres meses; la Real Academia Española (RAE) define la palabra preciso de la siguiente manera: “<em>Dicho de una cosa: Conocida con certeza o sin vaguedad. Ejemplo: No sé la hora precisa de la reunión</em>”, tomando en consideración el significado de la palabra preciso, y de que para deducir el número de días del periodo de gracia, en el documento identificado como “Tabla Informativa”, se debe <b>sobreentender</b>, inferir, derivar, adivinar o subentender, se concluye que lo establecido en este documento como periodo de gracia no concuerda con la definición de precisión, dado que en ninguna parte de este documento se menciona el término “periodo de gracia” y de que en ninguna parte se define los números de días de este periodo.')">Antecedente</button>
+        </div>
+
+        <div class="columna">
+            <h1 onclick="mostrarTexto(this, 'En el presente caso la Resolución de Recurso Extraordinario de Revisión en referencia, expedida el 19 de Octubre de 2021 por parte de la Superintendencia de Bancos, conculca los derechos constitucionales a la seguridad jurídica y al debido proceso. Pongo énfasis en que no existe otro mecanismo adecuado y eficaz para proteger el derecho violado ya que al tratarse de vulneración de derechos constitucionales, la acción de protección es la vía adecuada y eficaz para cesar dicha vulneración conforme el artículo 88 de la Constitución, tal como lo ilustra la Corte Constitucional en el fallo dado con Sentencia No. 1082-17-EP/22, párr. 22 donde se dice que: “<em>De acuerdo con la Constitución y la jurisprudencia constitucional, la acción de protección tiene por objeto el amparo directo y eficaz de derechos constitucionales. Esta es una acción directa e independiente a otras vías jurisdiccionales. No se podrá exigir el agotamiento de otras vías o recursos para poder hacer efectiva la vulneración de derechos constitucionales</em>”')">Pretensión</h1>
+            <button onclick="mostrarTexto(this, 'Con todos estos antecedentes y al amparo de lo que establecen los Arts. 86 y 88 de la Constitución de la República y 39 a 42 de la Ley Orgánica de Garantías Jurisdiccionales y Control Constitucional, acudo ante usted, señora Jueza y, solicito que, en sentencia, se declare que la Resolución de Recurso Extraordinario de Revisión en referencia expedida por la Superintendencia de Bancos el 19 de Octubre de 2021, ha vulnerado mis derechos constitucionales y ordene la inmediata e integral reparación, material e inmaterial, de mis derechos anulando la inconstitucional resolución y condenando al Superintendente de Bancos a emitir una nueva resolución donde se considere el dictamen dado según lo solicitado en mi petición y, consecuentemente, se analice la aplicación de las normas dadas en los artículos 10 y 17 literal f) del Libro I, Título XIII, Capítulo III de la Codificación de las Normas de la Superintendencia de Bancos.')">Principal</button>
+            <hr>
+            <button onclick="mostrarTexto(this, 'Si de comprobarse la vulneración de derechos y de presentarse algún impedimento que imposibilite la ejecución de mi principal pretensión, con el fin de resarcir mis derechos constitucionales, solicito que en sentencia, se declare que la Resolución de Recurso Extraordinario de Revisión expedida por la Superintendencia de Bancos, ha vulnerado mis derechos constitucionales y ordene la inmediata e integral reparación, material e inmaterial, de mis derechos condenando, al Superintendente de Bancos, al pago, hacia mi Persona como afectado, de las costas, daños y perjuicios consistentes en el valor total de los cobros indebidos que Banco Pichincha C.A. ha realizado dentro de la operación crediticia con contrato de préstamo en referencia.')">Alternativa</button>
+        </div>
+    </div>
+
+    <div id="resultado" class="resultado">
+        <!-- El texto seleccionado aparecerá aquí -->
+    </div>
+
+    <div id="temporizador" class="temporizador">
+        <div id="contador">00:00</div>
+    </div>
+
+    <script>
+        let intervalId;
+        let segundos = 0;
+        let botones = document.querySelectorAll('button');
+
+        function iniciarTemporizador() {
+            detenerTemporizador(); // Detener el temporizador si ya está en marcha
+            segundos = 0;
+            actualizarContador();
+
+            // Iniciar el temporizador cada segundo
+            intervalId = setInterval(function () {
+                segundos++;
+                actualizarContador();
+            }, 1000);
+        }
+
+        function detenerTemporizador() {
+            clearInterval(intervalId);
+        }
+
+        function actualizarContador() {
+            const horas = Math.floor(segundos / 3600);
+            const minutos = Math.floor((segundos % 3600) / 60);
+            const segundosRestantes = segundos % 60;
+
+            const formatoHora = pad(horas) + ":" + pad(minutos) /*+ ":" + pad(segundos)*/;
+
+            document.getElementById('contador').innerText = formatoHora;
+        }
+
+        function pad(valor) {
+            return valor < 10 ? "0" + valor : valor;
+        }
+
+        function mostrarTexto(boton, texto) {
+            // Remover la clase 'active' de todos los botones
+            botones.forEach(b => b.classList.remove('active'));
+
+            // Agregar la clase 'active' al botón presionado
+            boton.classList.add('active');
+
+            // Cambiar el texto en el pie de página
+            document.getElementById('resultado').innerHTML = texto;
+        }
+    </script>
+</body>
+</html>
